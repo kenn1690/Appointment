@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MonthlyReportController">
+   <children>
+      <VBox alignment="CENTER_RIGHT" layoutX="164.0" layoutY="367.0" prefHeight="81.0" prefWidth="147.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onActionGoHome" text="To Home" />
+         </children>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </VBox>
+      <ComboBox fx:id="monthCombo" layoutX="73.0" layoutY="60.0" onAction="#onActionChooseMonth" prefWidth="150.0" />
+      <ComboBox fx:id="typeCombo" layoutX="73.0" layoutY="122.0" onAction="#onActionChooseType" prefWidth="150.0" />
+      <HBox layoutX="23.0" layoutY="184.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+         <children>
+            <Label text="Total appointments:" />
+            <Label fx:id="totalNumAppsLbl" prefHeight="17.0" prefWidth="41.0" />
+         </children>
+         <padding>
+            <Insets left="15.0" top="15.0" />
+         </padding>
+      </HBox>
+      <Label layoutX="23.0" layoutY="14.0" text="You musth choose Month before Type." />
+      <Label layoutX="29.0" layoutY="64.0" text="Month:" />
+      <Label layoutX="35.0" layoutY="126.0" text="Type: " />
+   </children>
+</AnchorPane>

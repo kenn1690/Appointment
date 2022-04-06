@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="499.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CustomerController">
+    <VBox layoutX="14.0" layoutY="14.0" prefHeight="499.0" prefWidth="598.0">
+        <children>
+            <TableView fx:id="customerTableView" prefHeight="425.0" prefWidth="250.0">
+                <columns>
+                    <TableColumn fx:id="idCol" prefWidth="35.0" text="ID" />
+                    <TableColumn fx:id="nameCol" prefWidth="100.0" text="Name" />
+                    <TableColumn fx:id="addressCol" prefWidth="115.0" text="Address" />
+               <TableColumn fx:id="postalCodeCol" prefWidth="115.0" text="Postal Code" />
+               <TableColumn fx:id="phoneCol" prefWidth="115.0" text="Phone" />
+               <TableColumn fx:id="divisionIDCol" prefWidth="115.0" text="Division ID" />
+                </columns>
+            </TableView>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="70.0" prefWidth="250.0" spacing="20.0">
+                <children>
+               <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#onActionToHome">
+                  <HBox.margin>
+                     <Insets right="100.0" />
+                  </HBox.margin></Button>
+                    <Button fx:id="addBtn" mnemonicParsing="false" onAction="#onActionAddCustomer">
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin></Button>
+                    <Button fx:id="modifyBtn" mnemonicParsing="false" onAction="#onActionModifyCustomer">
+                        <HBox.margin>
+                            <Insets right="20.0" />
+                        </HBox.margin>
+                    </Button>
+                    <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#onActionDeleteCustomer" />
+                </children>
+                <padding>
+                    <Insets bottom="30.0" />
+                </padding>
+            </HBox>
+        </children>
+    </VBox>
+   <HBox alignment="CENTER_RIGHT" layoutX="635.0" layoutY="23.0" prefHeight="100.0" prefWidth="150.0" spacing="20.0">
+      <children>
+         <Button fx:id="toHomeViewBtn" mnemonicParsing="false" onAction="#onActionToHome" />
+      </children>
+      <padding>
+         <Insets right="15.0" />
+      </padding>
+   </HBox>
+
+</AnchorPane>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddAppointmentsController">
+   <children>
+      <HBox alignment="CENTER_RIGHT" layoutX="321.0" layoutY="332.0" prefHeight="68.0" prefWidth="272.0" spacing="40.0">
+         <children>
+            <Button fx:id="addBtn" mnemonicParsing="false" onAction="#onActionSaveAppointment" />
+            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#onActionGoHome" />
+         </children>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </HBox>
+      <VBox prefHeight="400.0" prefWidth="440.0">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="93.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="345.00000762939453" minWidth="10.0" prefWidth="327.8" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="titleLbl" />
+                  <Label fx:id="descriptionLbl" GridPane.rowIndex="1" />
+                  <Label fx:id="locationLbl" GridPane.rowIndex="2" />
+                  <Label fx:id="contactLbl" GridPane.rowIndex="3" />
+                  <Label fx:id="typeLbl" GridPane.rowIndex="4" />
+                  <Label fx:id="startDtLbl" GridPane.rowIndex="5" />
+                  <Label fx:id="customerIDLbl" GridPane.rowIndex="8" />
+                  <Label fx:id="userIDLbl" GridPane.rowIndex="9" />
+                  <TextField fx:id="titleTxtFld" GridPane.columnIndex="1" />
+                  <TextField fx:id="descriptionTxtFld" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="locationTxtFld" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="typeTxtFld" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <DatePicker fx:id="startDateDtPckr" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ComboBox fx:id="contactCombo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="customerIDCombo" onAction="#onActionGetCustomerAppointmentList" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="userIDCombo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Label fx:id="startTimeLbl" GridPane.rowIndex="6" />
+                  <Label fx:id="endTimeLbl" GridPane.rowIndex="7" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <children>
+                        <ComboBox fx:id="startTimeHoursCombo" onAction="#onActionSetHourToChangeMinutes" onMouseClicked="#onClickRemoveHour" prefWidth="150.0" />
+                        <ComboBox fx:id="startTimeMinutesCombo" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <children>
+                        <ComboBox fx:id="endTimeHoursCombo" onAction="#onActionSetEndHourToChangeMinutes" prefWidth="150.0" />
+                        <ComboBox fx:id="endTimeMinutesCombo" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets left="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

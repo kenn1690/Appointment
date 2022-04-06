@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddCustomerController">
+    <children>
+        <HBox alignment="CENTER_RIGHT" layoutX="321.0" layoutY="332.0" prefHeight="68.0" prefWidth="272.0" spacing="40.0">
+            <children>
+                <Button fx:id="addBtn" mnemonicParsing="false" onAction="#onActionAddCustomer" />
+                <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#onActionGoToCustomerView" />
+            </children>
+            <padding>
+                <Insets right="20.0" />
+            </padding>
+        </HBox>
+      <VBox prefHeight="406.0" prefWidth="437.0">
+         <children>
+            <GridPane prefHeight="347.0" prefWidth="396.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="88.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="306.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="nameLbl" />
+                  <Label fx:id="addressLbl" GridPane.rowIndex="1" />
+                  <Label fx:id="postalCodeLbl" GridPane.rowIndex="2" />
+                  <Label fx:id="phoneLbl" GridPane.rowIndex="3" />
+                  <TextField fx:id="nameTxtFld" GridPane.columnIndex="1" />
+                  <TextField fx:id="addresTxtFld" layoutX="207.0" layoutY="31.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="postalCodeTxtFld" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="phoneTxtFld" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="countryLbl" GridPane.rowIndex="4" />
+                  <Label fx:id="stateLbl" GridPane.rowIndex="5" />
+                  <ComboBox fx:id="countryCombo" onAction="#onActionChangeCountry" prefHeight="25.0" prefWidth="276.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="stateCombo" prefHeight="25.0" prefWidth="277.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               </children>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets left="30.0" top="30.0" />
+         </padding>
+      </VBox>
+    </children>
+</AnchorPane>

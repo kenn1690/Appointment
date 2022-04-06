@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="507.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HomeController">
+
+      <VBox alignment="BOTTOM_RIGHT" layoutX="135.0" layoutY="14.0" prefHeight="471.0" prefWidth="850.0">
+         <children>
+         <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+            <children>
+               <VBox prefHeight="88.0" prefWidth="220.0">
+                  <children>
+                     <HBox prefHeight="47.0" prefWidth="354.0">
+                        <children>
+                           <Label prefHeight="17.0" prefWidth="80.0" text="Contact ID" />
+                           <ComboBox fx:id="contactIDHomeComboBox" onAction="#onActionFilterAppointmentsByContact" prefHeight="25.0" prefWidth="136.0" />
+                        </children>
+                     </HBox>
+                     <Button mnemonicParsing="false" onAction="#onActionGenerateMonthlyReport" prefHeight="25.0" prefWidth="216.0" text="Generate Monthly Report" />
+                  </children>
+               </VBox>
+               <HBox alignment="CENTER_LEFT" prefHeight="76.0" prefWidth="187.0" spacing="10.0">
+                  <children>
+                     <Label fx:id="totalNumberTxtLbl" />
+                     <Label fx:id="totalNumberLbl" />
+                  </children>
+               </HBox>
+               <RadioButton fx:id="allAppointmentsViewRdBtn" mnemonicParsing="false" onAction="#onActionFilterAllAppointments" selected="true" text="all">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="filteredAppointments" />
+                  </toggleGroup></RadioButton>
+               <RadioButton fx:id="monthlyAppointmentsViewRdBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionFilterMonthAppointments" text="monthly" toggleGroup="$filteredAppointments" />
+               <RadioButton fx:id="weeklyAppointmentsViewRdBtn" layoutX="98.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionFilterWeekAppointments" text="weekly" toggleGroup="$filteredAppointments" />
+               <RadioButton fx:id="dailyAppointmentsViewRdBtn" layoutX="186.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionFilterDailyAppointments" text="daily" toggleGroup="$filteredAppointments" />
+            </children>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <padding>
+               <Insets right="10.0" />
+            </padding>
+         </HBox>
+            <TableView fx:id="appointmentsTableView" prefHeight="396.0" prefWidth="850.0">
+              <columns>
+                <TableColumn fx:id="appointmentIDCol" prefWidth="50" text="ID" />
+                <TableColumn fx:id="titleCol" prefWidth="100" text="Title" />
+                  <TableColumn fx:id="descriptionCol" prefWidth="100.0" text="Description" />
+                  <TableColumn fx:id="locationCol" prefWidth="100.0" text="Location" />
+               <TableColumn fx:id="contactCol" prefWidth="100.0" text="Contact" />
+               <TableColumn fx:id="typeCol" prefWidth="100.0" text="Type" />
+               <TableColumn fx:id="startDateTimeCol" prefWidth="100.0" text="Start DateTime" />
+               <TableColumn fx:id="endDateCol" prefWidth="100.0" text="End DateTime" />
+               <TableColumn fx:id="customerIDCol" prefWidth="100.0" text="Customer ID" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_RIGHT" layoutX="7.0" layoutY="40.0" prefHeight="418.0" prefWidth="100.0" spacing="20.0">
+         <children>
+            <Button fx:id="addBtn" mnemonicParsing="false" onAction="#onActionAddAppointment" />
+            <Button fx:id="modifyBtn" mnemonicParsing="false" onAction="#onActionModifyAppointment" />
+            <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#onActionDeleteAppointment">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin></Button>
+         </children>
+         <padding>
+            <Insets right="3.0" />
+         </padding>
+      </VBox>
+   <HBox prefHeight="62.0" prefWidth="133.0">
+      <children>
+         <Button fx:id="toCustomerViewBtn" mnemonicParsing="false" onAction="#onActionGoToCustomerView" />
+      </children>
+      <padding>
+         <Insets left="10.0" top="10.0" />
+      </padding>
+   </HBox>
+
+</AnchorPane>
